@@ -1,5 +1,5 @@
 import { Action, ActionPanel, getPreferenceValues, Icon, openCommandPreferences } from "@raycast/api";
-import { openNewArcTab, openNewFirefoxTab, openNewTab } from "../actions";
+import { openNewArcTab, openNewDiaTab, openNewFirefoxTab, openNewTab } from "../actions";
 import { HistoryEntry, Preferences, SupportedBrowsers } from "../interfaces";
 
 export class BrowserHistoryActions {
@@ -98,6 +98,14 @@ function HistoryItemAction({ entry: { url, browser } }: { entry: HistoryEntry })
         onAction={() => openNewTab(SupportedBrowsers.Sidekick, url)}
       />
     ),
+    [SupportedBrowsers.Dia]: (
+      <Action
+        title={"Open in Dia"}
+        icon={"dia-logo.png"}
+        shortcut={{ modifiers: ["cmd", "shift"], key: "d" }}
+        onAction={() => openNewDiaTab(url)}
+      />
+    ),
   };
   return (
     <ActionPanel>
@@ -126,6 +134,7 @@ function HistoryItemAction({ entry: { url, browser } }: { entry: HistoryEntry })
         {actions[SupportedBrowsers.Iridium]}
         {actions[SupportedBrowsers.Orion]}
         {actions[SupportedBrowsers.Sidekick]}
+        {actions[SupportedBrowsers.Dia]}
       </ActionPanel.Section>
     </ActionPanel>
   );

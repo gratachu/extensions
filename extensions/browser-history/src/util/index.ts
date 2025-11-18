@@ -14,6 +14,7 @@ import {
   defaultProfilePathVivaldi,
   defaultProfilePathOrion,
   defaultProfilePathSidekick,
+  defaultProfilePathDia,
 } from "../constants";
 
 const userLibraryDirectoryPath = () => {
@@ -48,6 +49,7 @@ export const getHistoryDbPath = (browser: SupportedBrowsers) => {
     profilePathIridium,
     profilePathOrion,
     profilePathSidekick,
+    profilePathDia,
   } = getPreferenceValues<Preferences>();
   const userDataDirectory = userLibraryDirectoryPath();
   let profilePath, profileName;
@@ -102,6 +104,10 @@ export const getHistoryDbPath = (browser: SupportedBrowsers) => {
       return profilePathSidekick
         ? path.join(profilePathSidekick, "History")
         : path.join(userDataDirectory, ...defaultProfilePathSidekick);
+    case SupportedBrowsers.Dia:
+      return profilePathDia
+        ? path.join(profilePathDia, "History")
+        : path.join(userDataDirectory, ...defaultProfilePathDia);
     default:
       throw new Error("Unsupported browser.");
   }

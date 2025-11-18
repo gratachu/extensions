@@ -88,3 +88,24 @@ export async function openNewFirefoxTab(url: string): Promise<boolean | string> 
 
   return await runAppleScript(script);
 }
+
+export async function openNewDiaTab(url: string): Promise<boolean | string> {
+  console.log("[Dia] Opening URL:", url);
+
+  const script = `
+    return do shell script "open -a Dia ${url}"
+  `;
+
+  console.log("[Dia] AppleScript:", script);
+
+  try {
+    const result = await runAppleScript(script);
+    console.log("[Dia] Success:", result);
+    popToRoot();
+    closeMainWindow({ clearRootSearch: true });
+    return result;
+  } catch (error) {
+    console.error("[Dia] Error:", error);
+    throw error;
+  }
+}

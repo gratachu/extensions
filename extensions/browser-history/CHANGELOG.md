@@ -1,5 +1,9 @@
 # Browser History Changelog
 
+## [Add Dia browser] - {PR_MERGE_DATE}
+
+- Added Dia browser history search support.
+
 ## [Enhancement] - 2025-03-31
 
 - Add a `search in browser` action when no search history is available.

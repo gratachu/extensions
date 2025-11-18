@@ -2,13 +2,14 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "browser-history",
   "title": "Browser History",
-  "description": "Search and open tabs from history in Chrome, Firefox, Safari, Edge, Brave, Vivaldi, Arc, Opera, Iridium, Orion and Sidekick.",
+  "description": "Search and open tabs from history in Chrome, Firefox, Safari, Edge, Brave, Vivaldi, Arc, Opera, Iridium, Orion, Sidekick and Dia.",
   "icon": "icon.png",
   "author": "crisboarna",
   "contributors": [
     "tkdkid1000",
     "mikugeek",
-    "ridemountainpig"
+    "ridemountainpig",
+    "gratachu"
   ],
   "categories": [
     "Applications",
@@ -75,6 +76,10 @@
             {
               "title": "Sidekick",
               "value": "Sidekick"
+            },
+            {
+              "title": "Dia",
+              "value": "Dia"
             }
           ]
         },
@@ -136,6 +141,10 @@
             {
               "title": "Sidekick",
               "value": "Sidekick"
+            },
+            {
+              "title": "Dia",
+              "value": "Dia"
             }
           ]
         },
@@ -239,6 +248,14 @@
           "label": "Sidekick"
         },
         {
+          "name": "enableDia",
+          "type": "checkbox",
+          "required": false,
+          "description": "Enable Dia history to show up in results",
+          "default": false,
+          "label": "Dia"
+        },
+        {
           "name": "profilePathChrome",
           "type": "textfield",
           "required": false,
@@ -325,6 +342,14 @@
           "title": "Sidekick Profile Path",
           "description": "Path to Sidekick profile folder. Leave empty to use default profile. Default at /Users/username/Library/Application Support/Sidekick/Default",
           "placeholder": "/Users/username/Library/Application Support/Sidekick/Default"
+        },
+        {
+          "name": "profilePathDia",
+          "type": "textfield",
+          "required": false,
+          "title": "Dia Profile Path",
+          "description": "Path to Dia profile folder. Leave empty to use default profile. Default at /Users/username/Library/Application Support/Dia/User Data/Default",
+          "placeholder": "/Users/username/Library/Application Support/Dia/User Data/Default"
         }
       ]
     }

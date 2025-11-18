@@ -11,6 +11,7 @@ export const defaultProfilePathOpera = ["Application Support", "com.operasoftwar
 export const defaultProfilePathIridium = ["Application Support", "Iridium", "Default", "History"];
 export const defaultProfilePathOrion = ["Application Support", "Orion", "Defaults", "history"];
 export const defaultProfilePathSidekick = ["Application Support", "Sidekick", "Default", "History"];
+export const defaultProfilePathDia = ["Application Support", "Dia", "User Data", "Default", "History"];
 
 const DownloadTextChrome = `
   # 🚨Error: Google Chrome browser is not installed
@@ -114,6 +115,15 @@ const DownloadTextSidekick = `
   [![Sidekick](https://www.meetsidekick.com/wp-content/themes/sidekick-ppl/assets/img/logo-with-title.svg)]()
 `;
 
+const DownloadTextDia = `
+  # 🚨Error: Dia browser is not installed
+  ## This extension depends on Dia browser. You must install it to continue.
+  
+  [Click here](https://www.diabrowser.com/) if you want to download manually.
+  
+  [![Dia](https://www.diabrowser.com/logo.png)]()
+`;
+
 export const DOWNLOAD_TEXT = {
   [SupportedBrowsers.Chrome]: DownloadTextChrome,
   [SupportedBrowsers.Firefox]: DownloadTextFirefox,
@@ -126,6 +136,7 @@ export const DOWNLOAD_TEXT = {
   [SupportedBrowsers.Iridium]: DownloadTextIridium,
   [SupportedBrowsers.Orion]: DownloadTextOrion,
   [SupportedBrowsers.Sidekick]: DownloadTextSidekick,
+  [SupportedBrowsers.Dia]: DownloadTextDia,
 };
 
 export const INSTALL_COMMAND = {
@@ -140,6 +151,7 @@ export const INSTALL_COMMAND = {
   [SupportedBrowsers.Iridium]: undefined,
   [SupportedBrowsers.Orion]: "brew cask install opera",
   [SupportedBrowsers.Sidekick]: "brew install --cask pushplaylabs-sidekick",
+  [SupportedBrowsers.Dia]: undefined,
 };
 
 export const UnknownErrorText = `
